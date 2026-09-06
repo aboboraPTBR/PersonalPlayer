@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Meu Player</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div class="brand">
+                <div class="logo">♫</div>
+
+                <div>
+                    <h1>Meu Player</h1>
+                    <p>jukebox local™</p>
+                </div>
+            </div>
+
+            <div class="header-actions">
+
+                <button
+                    id="addButton"
+                    class="small-button"
+                >
+                    ＋ Música
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- ÁREA PRINCIPAL -->
+        <section class="main-grid">
+
+            <!-- PLAYER -->
+            <section class="player-card">
+
+                <div class="cover">
+
+                    <span>♫</span>
+
+                </div>
+
+                <div class="now-playing">
+
+                    <span class="eyebrow">
+                        TOCANDO AGORA
+                    </span>
+
+                    <h2 id="currentTitle">
+                        Nenhuma música
+                    </h2>
+
+                    <div class="progress-area">
+
+                        <div class="time-row">
+
+                            <span id="currentTime">
+                                0:00
+                            </span>
+
+                            <span id="duration">
+                                0:00
+                            </span>
+
+                        </div>
+
+                        <input
+                            id="progress"
+                            type="range"
+                            min="0"
+                            max="100"
+                            value="0"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTROLES -->
+                <div class="controls">
+
+                    <button
+                        id="shuffleButton"
+                        title="Aleatório"
+                    >
+                        🔀
+                    </button>
+
+                    <button
+                        id="previousButton"
+                        title="Anterior"
+                    >
+                        ⏮
+                    </button>
+
+                    <button
+                        id="playButton"
+                        class="play-button"
+                        title="Reproduzir"
+                    >
+                        ▶
+                    </button>
+
+                    <button
+                        id="nextButton"
+                        title="Próxima"
+                    >
+                        ⏭
+                    </button>
+
+                    <button
+                        id="repeatButton"
+                        title="Repetição"
+                    >
+                        🔁
+                    </button>
+
+                </div>
+
+
+                <!-- VOLUME -->
+                <div class="volume">
+
+                    <span id="volumeIcon">
+                        🔊
+                    </span>
+
+                    <input
+                        id="volumeSlider"
+                        type="range"
+                        min="0"
+                        max="1"
+                        step="0.01"
+                        value="0.8"
+                    >
+
+                </div>
+
+
+                <!-- ATALHOS -->
+                <div class="shortcuts">
+                    <span>Space = Play/Pause</span>
+                    <span>← → = música anterior/próxima</span>
+                    <span>↑ ↓ = volume</span>
+                </div>
+
+            </section>
+
+
+            <!-- PLAYLIST -->
+            <section class="playlist-card">
+
+                <div class="playlist-header">
+
+                    <div>
+
+                        <h2>Biblioteca</h2>
+
+                        <span id="songCount">
+                            0 músicas
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        id="search"
+                        type="search"
+                        placeholder="Pesquisar..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div
+                    id="dropZone"
+                    class="drop-zone"
+                >
+                    As pouha das música
+                </div>
+
+
+                <div
+                    id="songs"
+                    class="songs"
+                >
+                    <div class="empty">
+                        A galeria tá vazia man
+                    </div>
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- FILE INPUT -->
+        <input
+            id="fileInput"
+            type="file"
+            accept="audio/*"
+            multiple
+            hidden
+        >
+
+
+        <!-- ÁUDIO -->
+        <audio id="audio"></audio>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
